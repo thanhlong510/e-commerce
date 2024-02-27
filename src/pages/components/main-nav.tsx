@@ -59,7 +59,7 @@ const MainNav = ({
       label: "Settings",
     },
   ];
-console.log(pathname)
+
   return (
     <nav className="flex justify-center items-center space-x-4 lg:space-x-6">
       {routes.map((route) => (

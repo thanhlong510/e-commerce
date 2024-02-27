@@ -1,7 +1,5 @@
 
 import Head from "next/head";
-
-
 import { api } from "~/utils/api";
 import DashBoardPage from "./components/DashBoardPage";
 

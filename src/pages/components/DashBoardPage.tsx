@@ -3,6 +3,7 @@ import { Card, CardHeader, CardBody, Image } from "@nextui-org/react";
 import { LuDollarSign } from "react-icons/lu";
 import { CiWallet } from "react-icons/ci";
 import { IoStorefrontOutline } from "react-icons/io5";
+import BarChart from "./BarChart";
 const DashBoardPage = () => {
   return (
     <div>
@@ -42,8 +43,8 @@ const DashBoardPage = () => {
               <p className="text-sm font-bold uppercase">Total Revenue</p>
 
             </CardHeader>
-            <CardBody className="overflow-visible py-2">
-              <div className="text-2xl font-bold">$100.00</div>
+            <CardBody className="overflow-visible py-2 ">
+              <BarChart/>
             </CardBody>
           </Card>
         </div>
