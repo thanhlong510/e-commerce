@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import CreateBillboard from "./components/CreateBillboard";
 import { api } from "~/utils/api";
 
 const Test = () => {
@@ -11,10 +10,7 @@ const Test = () => {
   })
   return (
     <>
-      <img
-      className="h-32 w-32"
-      />
-      <CreateBillboard/>
+    
     </>
   );
 };

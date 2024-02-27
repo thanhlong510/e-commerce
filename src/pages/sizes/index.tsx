@@ -1,17 +1,20 @@
 import { useRouter } from "next/router";
 import React from "react";
 import { IoIosAdd } from "react-icons/io";
-import BillboardTable from "~/pages/components/BillboardTable";
+import CategoriesTable from "~/pages/components/CategoriesTable";
 
-const Billboards = () => {
-  const router = useRouter()
+
+
+const Categories = () => {
+    const router = useRouter()
+
   return (
     <div className="p-4">
       <div className="flex border-b border-solid pb-4 mb-4 items-center justify-between">
         <div>
-          <div className="text-4xl font-bold text-slate-950">Billboards</div>
+          <div className="text-4xl font-bold text-slate-950">Sizes</div>
           <div className="text-lg text-slate-600">
-            Manage billboard for your stores
+          Manage sizes for your stores
           </div>
         </div>
        
@@ -22,9 +25,10 @@ const Billboards = () => {
           </div>
         </button>
       </div>
-      <BillboardTable/>
+  
+      <CategoriesTable/>
     </div>
   );
 };
 
-export default Billboards;
+export default Categories;

@@ -10,12 +10,12 @@ const Navbar = () => {
           <div className="flex items-center rounded-3xl border border-solid px-2 py-1 space-x-3 ">
             <div className="flex  items-center justify-between space-x-1">
               <IoStorefrontOutline />
-              <div className="">Store <p className="hidden md:inline">
-              switcher
+              <div className="">Shoe <p className="hidden md:inline">
+              Store
               </p>
                  </div>
             </div>
-            <HiOutlineChevronUpDown />
+            
           </div>
 
           <MainNav />

@@ -72,8 +72,8 @@ console.log(pathname)
           <div
             className={
                 resultPathname === route.active
-                ? "hover:text-primary  font-semibold text-black   transition-colors "
-                : "text-muted-foreground hover:text-primary  font-medium text-slate-500 transition-colors  "
+                ? " border-b-2 border-solid border-black font-semibold text-black   transition-colors "
+                : "text-muted-foreground  font-medium text-slate-500 transition-colors  "
             }
             onClick={async (e) => {
               e.preventDefault();
