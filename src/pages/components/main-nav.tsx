@@ -3,64 +3,75 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
 
+export function removeLeadingSlash(str:string) {
+  // Kiểm tra xem chuỗi có bắt đầu bằng '/' hay không
+  if (str.startsWith('/')) {
+    // Trả về chuỗi bỏ đi dấu '/'
+    return str.substring(1);
+  }
+  // Nếu không, trả về chuỗi ban đầu
+  return str;
+}
+
 const MainNav = ({
   className,
   ...props
 }: React.HTMLAttributes<HTMLAreaElement>) => {
   const { pathname, push } = useRouter();
-  const secondSlashIndex = pathname.indexOf("/", pathname.indexOf("/") + 1); // Tìm vị trí của dấu / thứ hai
-  const billboardName = pathname.substring(secondSlashIndex + 1);
-
+  const resultPathname = removeLeadingSlash(pathname)
+  // const secondSlashIndex = pathname.indexOf("/", pathname.indexOf("/") + 1); // Tìm vị trí của dấu / thứ hai
+  // const billboardName = pathname.substring(secondSlashIndex + 1);
+  
   const routes = [
     {
-      href: `/12345/overview`,
+      href: `/overview`,
       active:`overview`,
       label: "Overview",
     },
     {
-      href: `/12345/billboards`,
+      href: `/billboards`,
       active:`billboards`,
       label: "Billboards",
     },
     {
-      href: `/12345/categories`,
+      href: `/categories`,
       active:`categories`,
       label: "Categories",
     },
     {
-      href: `/12345/sizes`,
+      href: `/sizes`,
       active:`sizes`,
       label: "Sizes",
     },
     {
-      href: `/12345/colors`,
+      href: `/colors`,
       active:`colors`,
       label: "Colors",
     },
     {
-      href: `/12345/products`,
+      href: `/products`,
       active:`products`,
       label: "Products",
     },
     {
-      href: `/12345/orders`,
+      href: `/orders`,
       active:`orders`,
       label: "Orders",
     },
     {
-      href: `/12345/settings`,
+      href: `/settings`,
       active:`settings`,
       label: "Settings",
     },
   ];
-
+console.log(pathname)
   return (
     <nav className="flex justify-center items-center space-x-4 lg:space-x-6">
       {routes.map((route) => (
         <Link key={route.href} href={route.href}>
           <div
             className={
-                billboardName === route.active
+                resultPathname === route.active
                 ? "hover:text-primary  font-semibold text-black   transition-colors "
                 : "text-muted-foreground hover:text-primary  font-medium text-slate-500 transition-colors  "
             }
