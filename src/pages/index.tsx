@@ -1,14 +1,6 @@
 
 import Head from "next/head";
-import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend,
-} from 'chart.js';
+
 
 import { api } from "~/utils/api";
 import DashBoardPage from "./components/DashBoardPage";
