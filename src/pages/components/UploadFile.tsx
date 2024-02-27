@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { api } from "~/utils/api";
 
 interface UploadFileProps {
   fileName?: string
   userId?:string
+  setFileName: (a:string)=> void
+  refetch?: void
 }
-
-
 
 export function useFileUpload() {
   return async (filename: string, file: File) => {
@@ -24,10 +23,10 @@ export function useFileUpload() {
   };
 }
 // Lấy thời gian tạo + user Id + coverphoto 
-const UploadFile: React.FC<UploadFileProps> = ({fileName, userId}) => {
+const UploadFile: React.FC<UploadFileProps> = ({fileName, userId, setFileName, refetch}) => {
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const uploadFile = useFileUpload();
-  const a =  api.profile.addAvatarImage.useMutation()
+  // const a =  api.profile.addAvatarImage.useMutation()
   useEffect(() => {
     const uploadSelectedFile = async () => {
       try {
@@ -37,10 +36,12 @@ const UploadFile: React.FC<UploadFileProps> = ({fileName, userId}) => {
         }
         const uploadOk = await uploadFile(fileName ?? selectedFile.name, selectedFile);
         if (uploadOk) {
-          await a.mutateAsync({
-            userId:userId ?? '',
-            avatarImage:`${userId}avatar` 
-          })
+          // await a.mutateAsync({
+          //   userId:userId ?? '',
+          //   avatarImage:`${userId}avatar` 
+          // })
+       
+          setFileName(selectedFile.name ??'')
           console.log("Upload successful");
         } else {
           // show error

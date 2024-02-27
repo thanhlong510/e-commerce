@@ -1,6 +1,6 @@
 import React from 'react'
 
-const create = () => {
+const Create = () => {
   return (
     <div className="p-4">
     <div className="flex border-b border-solid pb-4 mb-4 items-center justify-between">
@@ -12,9 +12,9 @@ const create = () => {
       </div>
     
     </div>
-
+    
   </div>
   )
 }
 
-export default create
+export default Create

@@ -11,6 +11,7 @@ import {
 import { FaRegEdit } from "react-icons/fa";
 import { RiDeleteBinLine } from "react-icons/ri";
 import {Input} from "@nextui-org/react";
+import { api } from "~/utils/api";
 const BillboardTable = () => {
   return (
     <div>

@@ -1,18 +1,24 @@
 import React from 'react'
+import { api } from '~/utils/api'
 
 const Xinchao = () => {
+  
+  // const a=api.store.create.useMutation()
+  // a.mutate({
+  //   name:'xin chao'
+  // })
+
+  const handle =()=>{
+    return 
+  }
+  const {data:billboard} = api.billboard.getAll.useQuery()
+  console.log(billboard)
   return (
-    <div>Xinchao
+    <div>
+      <button onClick={handle}>
+      Xinchao
+      </button>
 
-<input
-        type="text"
-        id="title"
-        className="mt-1 h-auto min-h-[20px] w-full rounded py-2 text-2xl font-extrabold focus:outline-none "
-        placeholder="Add the category"
-        // onChange={handleTitleChange}
-      />
-
-      <button className="text-lg font-bold">Submit</button>
     </div>
   )
 }

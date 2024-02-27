@@ -1,5 +1,6 @@
-import { storeRouter } from "~/server/api/routers/store";
 import { createTRPCRouter } from "~/server/api/trpc";
+import { fileRouter } from "./routers/file";
+import { billboardRouter } from "./routers/billboard";
 
 /**
  * This is the primary router for your server.
@@ -7,7 +8,9 @@ import { createTRPCRouter } from "~/server/api/trpc";
  * All routers added in /api/routers should be manually added here.
  */
 export const appRouter = createTRPCRouter({
-  store: storeRouter,
+
+  file:fileRouter,
+  billboard: billboardRouter
 });
 
 // export type definition of API
