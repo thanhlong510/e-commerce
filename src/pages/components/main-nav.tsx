@@ -24,11 +24,6 @@ const MainNav = ({
   
   const routes = [
     {
-      href: `/overview`,
-      active:`overview`,
-      label: "Overview",
-    },
-    {
       href: `/billboards`,
       active:`billboards`,
       label: "Billboards",

@@ -40,7 +40,7 @@ const DashBoardPage = () => {
         <Card className="rounded-2xl mt-2 h-full border border-solid py-4">
             <CardHeader className="flex items-center justify-between px-4 pb-0 pt-2">
               <p className="text-sm font-bold uppercase">Total Revenue</p>
-              <LuDollarSign className="h-4 w-4" />
+
             </CardHeader>
             <CardBody className="overflow-visible py-2">
               <div className="text-2xl font-bold">$100.00</div>
