@@ -1,5 +1,5 @@
 import React from "react";
-import TitleHeader from "../components/TitileHeader";
+import TitleHeader from "../../components/TitileHeader";
 import { Input } from "@nextui-org/react";
 const CreateProduct = () => {
   return (

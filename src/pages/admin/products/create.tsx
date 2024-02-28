@@ -1,7 +1,7 @@
 import React from "react";
-import TitleHeader from "../components/TitileHeader";
+import TitleHeader from "../../components/TitileHeader";
 import { Input } from "@nextui-org/react";
-const CreateColor = () => {
+const CreateProduct = () => {
   return (
     <div className="p-4 ">
       <TitleHeader
@@ -18,7 +18,7 @@ const CreateColor = () => {
           />
         </div>
         <div>
-          <p className="text-xl mb-3 font-bold">Color</p>
+          <p className="text-xl mb-3 font-bold">Billboard</p>
           <Input
             key="outside-left"
             placeholder="Category name"
@@ -35,4 +35,4 @@ const CreateColor = () => {
   );
 };
 
-export default CreateColor;
+export default CreateProduct;

@@ -19,45 +19,31 @@ const MainNav = ({
 }: React.HTMLAttributes<HTMLAreaElement>) => {
   const { pathname, push } = useRouter();
   const resultPathname = removeLeadingSlash(pathname)
-  // const secondSlashIndex = pathname.indexOf("/", pathname.indexOf("/") + 1); // Tìm vị trí của dấu / thứ hai
-  // const billboardName = pathname.substring(secondSlashIndex + 1);
-  
+  const parts = pathname.split("/"); // Chia chuỗi thành mảng các phần tử dựa trên dấu '/'
+const secondPart = parts[2]; // Lấy phần tử tương ứng với dấu '/' thứ hai
+
   const routes = [
     {
-      href: `/billboards`,
+      href: `/admin/billboards`,
       active:`billboards`,
       label: "Billboards",
     },
     {
-      href: `/categories`,
+      href: `/admin/categories`,
       active:`categories`,
       label: "Categories",
     },
     {
-      href: `/sizes`,
-      active:`sizes`,
-      label: "Sizes",
-    },
-    {
-      href: `/colors`,
-      active:`colors`,
-      label: "Colors",
-    },
-    {
-      href: `/products`,
+      href: `/admin/products`,
       active:`products`,
       label: "Products",
     },
     {
-      href: `/orders`,
+      href: `/admin/orders`,
       active:`orders`,
       label: "Orders",
-    },
-    {
-      href: `/settings`,
-      active:`settings`,
-      label: "Settings",
-    },
+    }
+    
   ];
 
   return (
@@ -66,7 +52,7 @@ const MainNav = ({
         <Link key={route.href} href={route.href}>
           <div
             className={
-                resultPathname === route.active
+                secondPart === route.active
                 ? " border-b-2 border-solid border-black font-semibold text-black   transition-colors "
                 : "text-muted-foreground  font-medium text-slate-500 transition-colors  "
             }

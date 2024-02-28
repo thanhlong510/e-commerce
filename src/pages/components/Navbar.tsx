@@ -13,7 +13,7 @@ const Navbar = () => {
               <IoStorefrontOutline />
               <Link href={'/'}>
               <div className="">
-                Shoe <p className="hidden md:inline">Store</p>
+                Fashion <p className="hidden md:inline">Store</p>
               </div>
               </Link>
               

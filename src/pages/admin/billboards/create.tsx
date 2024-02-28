@@ -1,4 +1,5 @@
 import React from 'react'
+import CreateBillboard from '~/pages/components/CreateBillboard'
 
 const Create = () => {
   return (
@@ -12,7 +13,7 @@ const Create = () => {
       </div>
     
     </div>
-    
+    {/* <CreateBillboard/> */}
   </div>
   )
 }

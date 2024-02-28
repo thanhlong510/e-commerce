@@ -2,19 +2,22 @@ import { useRouter } from "next/router";
 import React from "react";
 import { IoIosAdd } from "react-icons/io";
 import CategoriesTable from "~/pages/components/CategoriesTable";
+import Navbar from "~/pages/components/Navbar";
 
 
 
-const Colors = () => {
+const Products = () => {
     const router = useRouter()
 
   return (
-    <div className="p-4">
+    <div>
+      <Navbar/>
+      <div className="p-4">
       <div className="flex border-b border-solid pb-4 mb-4 items-center justify-between">
         <div>
-          <div className="text-4xl font-bold text-slate-950">Colors</div>
+          <div className="text-4xl font-bold text-slate-950">Products</div>
           <div className="text-lg text-slate-600">
-          Manage colors for your store
+          Manage products for your store
           </div>
         </div>
        
@@ -28,7 +31,9 @@ const Colors = () => {
   
       <CategoriesTable/>
     </div>
+    </div>
+    
   );
 };
 
-export default Colors;
+export default Products;

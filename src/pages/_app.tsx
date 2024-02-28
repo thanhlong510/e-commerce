@@ -7,6 +7,13 @@ import { api } from "~/utils/api";
 import "~/styles/globals.css";
 import Navbar from "./components/Navbar";
 import { NextUIProvider } from "@nextui-org/react";
+import StoreNav from "./components/StoreNav";
+import {Jost} from '@next/font/google'
+
+const jost = Jost({
+  subsets:['latin'],
+  weight:['400']
+})
 const MyApp: AppType<{ session: Session | null }> = ({
   Component,
   pageProps: { session, ...pageProps },
@@ -14,8 +21,13 @@ const MyApp: AppType<{ session: Session | null }> = ({
   return (
     <SessionProvider session={session}>
       <NextUIProvider>
-        <Navbar />
-        <Component {...pageProps} />
+        {/* <Navbar /> */}
+        <main className={jost.className}>
+        <Component {...pageProps}  />
+        </main> 
+        
+
+       
       </NextUIProvider>
     </SessionProvider>
   );
