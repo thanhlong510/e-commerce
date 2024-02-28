@@ -18,11 +18,15 @@ const MainNav = ({
   ...props
 }: React.HTMLAttributes<HTMLAreaElement>) => {
   const { pathname, push } = useRouter();
-  const resultPathname = removeLeadingSlash(pathname)
   const parts = pathname.split("/"); // Chia chuỗi thành mảng các phần tử dựa trên dấu '/'
 const secondPart = parts[2]; // Lấy phần tử tương ứng với dấu '/' thứ hai
 
   const routes = [
+    {
+      href: `/admin/overview`,
+      active:`overview`,
+      label: "Overview",
+    },
     {
       href: `/admin/billboards`,
       active:`billboards`,
