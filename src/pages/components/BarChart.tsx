@@ -1,75 +1,83 @@
 import React, { useState } from "react";
-import { Bar } from "react-chartjs-2";
-import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend,
-  TooltipItem,
-  ChartData,
-} from "chart.js";
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend,
-);
 
-export const options = {
-  responsive: true,
-  plugins: {
-    legend: {
-      display: false,
-    },
-  },
-  scales: {
-    x: {
-      grid: {
-        display: false,
-      },
-    },
-    y: {
-      grid: {
-        display: false,
-      },
-    },
-  }
 
-};
+import {ResponsiveContainer, BarChart as BarGraph, XAxis, YAxis, Bar} from 'recharts'
 
-const labels = [
-  "Jan",
-  "Feb",
-  "Mar",
-  "Apr",
-  "May",
-  "Jun",
-  "Jul",
-  "Aug",
-  "Sep",
-  "Oct",
-  "Nov",
-  "Dec",
-];
 
-export const data = {
-  labels,
-  datasets: [
-    {
-      data: [0, 0, 0, 0, 0, 0, 100, 0, 0, 0, 0, 0],
-      backgroundColor: "rgb(0,0,255)",
-    },
-  ],
-};
+
+
+
+const data = [{
+  name:'Jan',
+  total:Math.floor(Math.random() * 5000)+1000
+},
+{
+  name:'Feb',
+  total:Math.floor(Math.random() * 5000)+1000
+},
+{
+  name:'Mar',
+  total:Math.floor(Math.random() * 5000)+1000
+},
+{
+  name:'Apr',
+  total:Math.floor(Math.random() * 5000)+1000
+},
+{
+  name:'May',
+  total:Math.floor(Math.random() * 5000)+1000
+},
+{
+  name:'Jun',
+  total:Math.floor(Math.random() * 5000)+1000
+},
+{
+  name:'Jul',
+  total:Math.floor(Math.random() * 5000)+1000
+},
+{
+  name:'Aug',
+  total:Math.floor(Math.random() * 5000)+1000
+},
+{
+  name:'Sep',
+  total:Math.floor(Math.random() * 5000)+1000
+},
+{
+  name:'Oct',
+  total:Math.floor(Math.random() * 5000)+1000
+},
+{
+  name:'No',
+  total:Math.floor(Math.random() * 5000)+1000
+},
+{
+  name:'Dec',
+  total:Math.floor(Math.random() * 5000)+1000
+},
+]
 const BarChart = () => {
   return (
     <div>
-      <Bar className="max-h-[250px]" options={options} data={data} />
+      <ResponsiveContainer width={'100%'} height={300}>
+        <BarGraph data={data}>
+          <XAxis dataKey={'name'}
+          tickLine = {false}
+          axisLine= {false}
+          stroke="#888888"
+          fontSize={12}
+          />
+          <YAxis
+           tickLine = {false}
+           axisLine= {false}
+           stroke="#888888"
+           fontSize={12}
+           tickFormatter={(value)=> `$${value}`}
+          />
+          <Bar dataKey={'total'} radius={[4,4,0,0]}/>
+        </BarGraph>
+      </ResponsiveContainer>
+
     </div>
   );
 };

@@ -33,11 +33,6 @@ const secondPart = parts[2]; // Lấy phần tử tương ứng với dấu '/' 
       label: "Billboards",
     },
     {
-      href: `/admin/categories`,
-      active:`categories`,
-      label: "Categories",
-    },
-    {
       href: `/admin/products`,
       active:`products`,
       label: "Products",

@@ -20,7 +20,7 @@ export default function Home() {
 
         <div className="relative pt-[100px] ">
           <img className="bg-cover" src="/banner-bg3.jpg" />
-          <div className="absolute left-[40px] top-1/2 -translate-y-1/2  transform">
+          <div className="absolute left-[200px] top-1/2 -translate-y-1/2  transform">
             <IntroductionBillBoard />
           </div>
         </div>

@@ -5,7 +5,7 @@ const SaleSection = () => {
   return (
     <div className="flex items-center space-x-7 px-32 mt-20">
       <div className="relative">
-        <Image isZoomed src="/sale1.jpg" />
+        <Image isZoomed src="/sale1.jpg" className='opacity-100'/>
         <div className="absolute z-20 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform">
           <p className="text-xl font-bold text-white">SUMMER</p>
           <p className="font-black text-6xl text-white">SALE</p>
@@ -17,7 +17,7 @@ const SaleSection = () => {
         </div>
       </div>
       <div className="relative">
-        <Image isZoomed src="/sale2.jpg" />
+        <Image isZoomed src="/sale2.jpg" className='opacity-100' />
         <div className="absolute z-20 left-1/2 top-1/2  -translate-x-1/2 -translate-y-1/2 transform">
           <p className="text-xl font-bold text-white">SAVE UP</p>
           <p className="font-black text-6xl text-white">50%</p>

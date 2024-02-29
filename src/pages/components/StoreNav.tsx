@@ -17,25 +17,25 @@ const StoreNav = () => {
             <Link href={"/"}>
               <div className=" hover:text-red-600 flex items-center text-2xl font-medium">
                 <p>Home</p>
-                <FaLongArrowAltDown />{" "}
+               
               </div>
             </Link>
             <Link href={"/"}>
               <div className=" hover:text-red-600 flex items-center text-2xl font-medium">
                 <p>Shop</p>
-                <FaLongArrowAltDown />{" "}
+             
               </div>
             </Link>
             <Link href={"/"}>
               <div className=" hover:text-red-600 flex items-center text-2xl font-medium">
                 <p>Men</p>
-                <FaLongArrowAltDown />{" "}
+            
               </div>
             </Link>
             <Link href={"/"}>
               <div className=" hover:text-red-600 flex items-center text-2xl font-medium">
                 <p>Women</p>
-                <FaLongArrowAltDown />{" "}
+               
               </div>
             </Link>
           </div>
@@ -57,16 +57,15 @@ const StoreNav = () => {
               </Link>
             </button>
           </Tooltip>
-          <Badge content="5" size="sm" className=" bg-slate-500 border-none text-xs text-white p-[2px]">
+          <Badge content="5" size="sm" className=" bg-slate-500 border-none text-xs text-white px-[4px]">
             <button className="hover:text-red-500">
             <BsCartCheck className="text-2xl"/>
             </button>
                 
           </Badge>
-          <Badge content="4" size="sm" className=" bg-red-600 border-none text-xs text-white p-[2px]">
-            <Avatar
-              radius="sm"
-              className="h-[25px] w-[25px] rounded-full"
+          <Badge content="4" size="sm" className=" bg-red-600 border-none  text-xs text-white px-[4px]">
+            <img
+              className="h-[25px] w-[25px] rounded-full opacity-[none]"
               src="https://i.pravatar.cc/150?u=a04258a2462d826712d"
             />
           </Badge>

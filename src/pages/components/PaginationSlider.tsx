@@ -42,16 +42,16 @@ const PaginationSlider: React.FC = () => {
                   isZoomed
                   src={`/slider${index + 1}.jpg`}
                   alt={`Image ${index + 1}`}
-                  className="h-[415px] w-[415px]"
+                  className="h-[500px] w-[415px] object-cover opacity-100"
                 />
                 <CardFooter className="text-small z-20 opacity-80 absolute bottom-0 left-0 right-0 bg-white">
-                  <div className="p-2 w-full">
+                  <div className="p-4 w-full">
                     <div className="flex items-center justify-between w-full ">
          
                       <p className="text-xl font-semibold">
                       Trendy woman black blazer
                       </p>
-                      <p className="text-default-500 font-mono text-x1 text-slate-500">
+                      <p className="text-default-500 text-x1 text-slate-500">
                         125$
                       </p>
                     </div>

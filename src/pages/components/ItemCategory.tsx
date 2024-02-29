@@ -6,6 +6,7 @@ const ItemCategory = () => {
     <div className="relative inline-block">
       <Image
         isZoomed
+        className='opacity-100'
         alt="NextUI hero Image with delay"
         src="/collection1.jpg"
       />
@@ -23,6 +24,7 @@ const ItemCategory = () => {
     <div className="relative inline-block">
       <Image
         isZoomed
+        className='opacity-100'
         alt="NextUI hero Image with delay"
         src="/collection2.jpg"
       />
@@ -39,6 +41,7 @@ const ItemCategory = () => {
     </div>
     <div className="relative inline-block">
       <Image
+      className='opacity-100'
         isZoomed
         alt="NextUI hero Image with delay"
         src="/collection3.jpg"

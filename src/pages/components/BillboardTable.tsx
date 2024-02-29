@@ -24,23 +24,23 @@ const BillboardTable = () => {
       </div>  
      
 
-      <Table isStriped aria-label="Example static collection table">
+      <Table isStriped aria-label=" static collection table">
         <TableHeader className="border">
-          <TableColumn className="font-bold border-b-2  text-slate-600">Label</TableColumn>
+          <TableColumn className="font-bold border-b-2   text-slate-600">Label</TableColumn>
           <TableColumn className="font-bold border-b-2  text-slate-600">Date</TableColumn>
           <TableColumn className="font-bold border-b-2  text-slate-600">
             Actions
           </TableColumn>
         </TableHeader>
         <TableBody>
-          <TableRow className="border-b" key="1">
-            <TableCell className="font-bold text-slate-900">
+          <TableRow className="border-b " key="1">
+            <TableCell className="font-bold text-center text-slate-900">
               Explore the sport collection
             </TableCell>
-            <TableCell className="font-bold text-slate-900">
+            <TableCell className="font-bold text-center text-slate-900">
               June 25th 2024
             </TableCell>
-            <TableCell className="font-bold text-slate-900">
+            <TableCell className="font-bold text-center text-slate-900">
               <div className=" flex items-center space-x-2 ">
                 <Tooltip
                   content="Edit user"
@@ -62,25 +62,25 @@ const BillboardTable = () => {
             </TableCell>
           </TableRow>
           <TableRow className="border-b" key="2">
-            <TableCell className="font-bold text-slate-900">
+            <TableCell className="font-bold text-center text-slate-900">
               Explore the sport collection
             </TableCell>
-            <TableCell className="font-bold text-slate-900">
+            <TableCell className="font-bold text-center text-slate-900">
               June 25th 2024
             </TableCell>
-            <TableCell className="font-bold text-slate-900">
-              <div className=" flex items-center space-x-2 ">
+            <TableCell className="font-bold text-center  text-slate-900">
+              <div className=" flex items-center text-center space-x-2 ">
                 <Tooltip
                   content="Edit user"
-                  className="rounded-3xl bg-black p-1 px-2 text-white"
+                  className="rounded-3xl  bg-black p-1 px-2 text-white"
                 >
-                  <span className="text-default-400 cursor-pointer text-lg active:opacity-50">
+                  <span className="text-default-400 text-center cursor-pointer text-lg active:opacity-50">
                     <FaRegEdit />
                   </span>
                 </Tooltip>
                 <Tooltip
                   content="Delete user"
-                  className="rounded-3xl bg-red-500 p-1 px-2 text-white"
+                  className="rounded-3xl  bg-red-500 p-1 px-2 text-white"
                 >
                   <span className="text-danger cursor-pointer text-lg active:opacity-50">
                     <RiDeleteBinLine className="text-red-500" />

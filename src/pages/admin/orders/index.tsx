@@ -1,10 +1,7 @@
 import { useRouter } from "next/router";
 import React from "react";
 import { IoIosAdd } from "react-icons/io";
-import CategoriesTable from "~/pages/components/CategoriesTable";
 import Navbar from "~/pages/components/Navbar";
-
-
 
 const Orders = () => {
     const router = useRouter()
@@ -29,7 +26,6 @@ const Orders = () => {
         </button>
       </div>
   
-      <CategoriesTable/>
     </div>
     </div>
     
