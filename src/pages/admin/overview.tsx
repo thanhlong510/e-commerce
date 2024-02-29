@@ -27,7 +27,7 @@ const Overview = () => {
                   </button>
                   
                 </div>
-                <button className=" bg-slate-200 font-medium px-2 py-3 rounded-lg">
+                <button className=" bg-slate-200 font-medium px-4 py-3 rounded-lg">
                 {`${dayjs(currentDate).format("MMM D, YYYY H:m A")}`}
 
                 </button>

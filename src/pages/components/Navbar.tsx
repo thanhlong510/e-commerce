@@ -22,7 +22,6 @@ const Navbar = () => {
 
           <MainNav />
         </div>
-        <AuthShowcase/>
       </div>
     </div>
   );

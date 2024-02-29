@@ -14,8 +14,8 @@ const StoreNav = () => {
         <div className="flex items-center">
           <button className="block md:hidden"></button>
           <div className="flex items-center space-x-4 ">
-            <Link href={"/"}>
-              <div className=" hover:text-red-600 flex items-center text-2xl font-medium">
+            <Link href={"/"} >
+              <div className=" hover:text-red-600 hidden md:block flex items-center text-2xl font-medium">
                 <p>Home</p>
                
               </div>
@@ -41,7 +41,7 @@ const StoreNav = () => {
           </div>
         </div>
         <div className=" flex items-center space-x-5">
-          <div className="relative flex w-[220px] items-center">
+          <div className=" hidden relative md:flex w-[220px] items-center">
             <input
               className="h-[45px] w-full bg-[#f3f3f3] px-4 focus:outline-none "
               placeholder="Search for products"
@@ -63,9 +63,9 @@ const StoreNav = () => {
             </button>
                 
           </Badge>
-          <Badge content="4" size="sm" className=" bg-red-600 border-none  text-xs text-white px-[4px]">
+          <Badge content="4" size="sm" className=" bg-red-600  border-none hidden md:block text-xs text-white px-[4px]">
             <img
-              className="h-[25px] w-[25px] rounded-full opacity-[none]"
+              className="h-[25px] w-[25px] rounded-full opacity-[none] hidden md:block"
               src="https://i.pravatar.cc/150?u=a04258a2462d826712d"
             />
           </Badge>
