@@ -3,6 +3,7 @@ import DashBoardPage from "../components/DashBoardPage";
 import Navbar from "../components/Navbar";
 import { FaArrowsRotate } from "react-icons/fa6";
 import dayjs from 'dayjs'
+import { MdDashboard } from "react-icons/md";
 const Overview = () => {
   const currentDate = new Date();
   return (
@@ -12,7 +13,11 @@ const Overview = () => {
         <div className="mb-4 flex items-center justify-between border-b border-solid pb-4">
           <div className="w-full">
             <div className="justify-between w-full flex items-center">
-              <div className="text-4xl font-bold text-slate-950">Dashboard</div>
+              <div className="flex items-center space-x-2 text-4xl font-bold text-slate-950">
+              <div className="">Dashboard</div>
+              <MdDashboard/>
+              </div>
+              
               <div className="flex items-center space-x-5">
                
                 <div className="flex items-center space-x-3">

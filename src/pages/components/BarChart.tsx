@@ -1,12 +1,5 @@
-import React, { useState } from "react";
-
-
+import React from "react";
 import {ResponsiveContainer, BarChart as BarGraph, XAxis, YAxis, Bar} from 'recharts'
-
-
-
-
-
 const data = [{
   name:'Jan',
   total:Math.floor(Math.random() * 5000)+1000

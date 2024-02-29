@@ -19,7 +19,7 @@ const Billboards = () => {
           </div>
         </div>
        
-        <button  onClick={async(e) => await router.push(`${router.pathname}/create`)}  className="text-white p-2 bg-black rounded-lg">
+        <button  onClick={async() => await router.push(`${router.pathname}/create`)}  className="text-white p-2 bg-black rounded-lg">
           <div className="flex items-center space-x-2 px-2">
             <IoIosAdd className="h-5 w-5" />
             <p>Add new</p>

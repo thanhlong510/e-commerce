@@ -20,7 +20,7 @@ const Product = () => {
           isZoomed
           src={"/slider1.jpg"}
           width={526}
-          className=" h-[500px]"
+          className=" h-[500px] opacity-100"
         />
         <div className="w-2/3">
           <p className="mb-[17px] text-2xl font-bold">

@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, CardHeader, CardBody, Image } from "@nextui-org/react";
+import { Card, CardHeader, CardBody  } from "@nextui-org/react";
 import { LuDollarSign } from "react-icons/lu";
 import { CiWallet } from "react-icons/ci";
 import { IoStorefrontOutline } from "react-icons/io5";
@@ -45,7 +45,7 @@ const DashBoardPage = () => {
               <LuDollarSign className="h-4 w-4" />
             </CardHeader>
             <CardBody className="overflow-visible px-4 py-2">
-              <div className="text-2xl font-bold">$100.00</div>
+              <div className="text-2xl font-bold">$ 6000.00</div>
             </CardBody>
           </Card>
           <Card className="rounded-2xl border border-solid py-4 shadow-md">

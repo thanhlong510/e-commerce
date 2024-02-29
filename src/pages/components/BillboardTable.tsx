@@ -40,7 +40,7 @@ const BillboardTable = () => {
             <TableCell className="font-bold text-center text-slate-900">
               June 25th 2024
             </TableCell>
-            <TableCell className="font-bold text-center text-slate-900">
+            <TableCell className="font-bold flex justify-center text-center text-slate-900">
               <div className=" flex items-center space-x-2 ">
                 <Tooltip
                   content="Edit user"
@@ -68,7 +68,7 @@ const BillboardTable = () => {
             <TableCell className="font-bold text-center text-slate-900">
               June 25th 2024
             </TableCell>
-            <TableCell className="font-bold text-center  text-slate-900">
+            <TableCell className="font-bold flex justify-center text-slate-900">
               <div className=" flex items-center text-center space-x-2 ">
                 <Tooltip
                   content="Edit user"

@@ -14,8 +14,6 @@ export function removeLeadingSlash(str:string) {
 }
 
 const MainNav = ({
-  className,
-  ...props
 }: React.HTMLAttributes<HTMLAreaElement>) => {
   const { pathname, push } = useRouter();
   const parts = pathname.split("/"); // Chia chuỗi thành mảng các phần tử dựa trên dấu '/'

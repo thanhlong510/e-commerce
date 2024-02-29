@@ -1,7 +1,4 @@
 import Head from "next/head";
-
-import DashBoardPage from "./components/DashBoardPage";
-import { Image } from "@nextui-org/react";
 import IntroductionBillBoard from "./components/IntroductionBillBoard";
 import StoreNav from "./components/StoreNav";
 import PaginationSlider from "./components/PaginationSlider";
