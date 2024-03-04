@@ -4,11 +4,14 @@ import Navbar from "../components/Navbar";
 import { FaArrowsRotate } from "react-icons/fa6";
 import dayjs from 'dayjs'
 import { MdDashboard } from "react-icons/md";
+import SideNavbar from "~/components/ui/SideBar";
 const Overview = () => {
   const currentDate = new Date();
   return (
     <div>
-      <Navbar />
+     <div className="flex min-h-screen w-full bg-white text-black">
+      <SideNavbar />
+      <div className="w-full px-8 pt-2">
       <div className="p-4">
         <div className="mb-4 flex items-center justify-between border-b border-solid pb-4">
           <div className="w-full">
@@ -41,6 +44,9 @@ const Overview = () => {
         </div>
         <DashBoardPage />
       </div>
+      </div>
+      
+    </div>
     </div>
   );
 };
