@@ -2,6 +2,7 @@
 import React from "react";
 import { DataTable } from "~/components/DataTable";
 import { ColumnDef } from "@tanstack/react-table";
+import { Input } from "@nextui-org/react";
 type Payment = {
   name: string;
   email: string;
@@ -14,14 +15,14 @@ const columns: ColumnDef<Payment>[] = [
     accessorKey: "name",
     header: "Name",
     cell: ({ row }) => {
-        const userName = row.getValue('name') ;
+      const userName = row.getValue("name");
       return (
         <div className="flex items-center gap-2">
-        <img
-  className="h-10 w-10 rounded-full"
-  src={`https://api.dicebear.com/7.x/adventurer/svg?seed=${userName as string}`}
-  alt="user-image"
-/>
+          <img
+            className="h-10 w-10 rounded-full"
+            src={`https://api.dicebear.com/7.x/adventurer/svg?seed=${userName as string}`}
+            alt="user-image"
+          />
           <p>{row.getValue("name")}</p>
         </div>
       );
@@ -136,6 +137,14 @@ const data: Payment[] = [
 const UserTable = () => {
   return (
     <div>
+      <div className="mb-8 mt-6">
+        <Input
+          key="outside"
+          labelPlacement="outside"
+          placeholder="Search"
+          className="max-w-40 rounded-lg border border-solid p-2"
+        />
+      </div>
       <DataTable columns={columns} data={data} />
     </div>
   );

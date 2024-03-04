@@ -12,7 +12,7 @@ import { Input } from "@nextui-org/react";
 const OrderTable = () => {
   return (
     <div>
-      <div className="m">
+      <div className="">
         <Input
           key="outside"
           labelPlacement="outside"
@@ -23,16 +23,16 @@ const OrderTable = () => {
 
       <Table isStriped aria-label=" static collection table">
         <TableHeader className="border">
-          <TableColumn className="border-b-2 font-bold   text-slate-600">
+          <TableColumn className="border-b-2 font-bold text-center   text-slate-600">
             #Order
           </TableColumn>
-          <TableColumn className="border-b-2 font-bold  text-slate-600">
+          <TableColumn className="border-b-2 font-bold text-center text-slate-600">
             Product
           </TableColumn>
-          <TableColumn className="border-b-2 font-bold  text-slate-600">
+          <TableColumn className="border-b-2 font-bold text-center text-slate-600">
             Payment
           </TableColumn>
-          <TableColumn className="border-b-2 font-bold  text-slate-600">
+          <TableColumn className="border-b-2 font-bold text-center text-slate-600">
             Order Status
           </TableColumn>
         </TableHeader>
