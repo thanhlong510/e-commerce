@@ -3,8 +3,9 @@ import StoreNav from "../components/StoreNav";
 import { Image } from "@nextui-org/react";
 
 import { BsCart } from "react-icons/bs";
-import Tabs from "../components/Tabs";
+
 import Footer from "../components/Footer";
+import DetailProduct from "../components/DetailProduct";
 const Product = () => {
   return (
     <div>
@@ -53,9 +54,9 @@ const Product = () => {
         </div>
       </div>
       <div className="mx-24 my-20">
-      <Tabs/>
+        <DetailProduct/>
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 };

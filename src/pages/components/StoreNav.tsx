@@ -26,18 +26,13 @@ const StoreNav = () => {
              
               </div>
             </Link>
-            <Link href={"/"}>
+            <Link href={"/about"}>
               <div className=" hover:text-red-600 flex items-center text-2xl font-medium">
                 <p>About</p>
             
               </div>
             </Link>
-            <Link href={"/"}>
-              <div className=" hover:text-red-600 flex items-center text-2xl font-medium">
-                <p>Faq</p>
-              </div>
-            </Link>
-            <Link href={"/"}>
+            <Link href={"/contact"}>
               <div className=" hover:text-red-600 flex items-center text-2xl font-medium">
                 <p>Contact</p>
               </div>

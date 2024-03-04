@@ -31,22 +31,8 @@ const uesrSalesData = [
     name: "Sofia Davis",
     email: "sofia.davis@email.com",
     saleAmount: "+$39.00",
-  },
-  {
-    name: "Snickers",
-    email: "snicker.martin@email.com",
-    saleAmount: "+$1,999.00",
-  },
-  {
-    name: "Jasper",
-    email: "jasper.nguyen@email.com",
-    saleAmount: "+$1,999.00",
-  },
-  {
-    name: "Misty",
-    email: "misty.nguyen@email.com",
-    saleAmount: "+$299.00",
   }
+
 ];
 
 const DashBoardPage = () => {
@@ -92,7 +78,7 @@ const DashBoardPage = () => {
           </Card>
         </div>
         <div className="grid grid-cols-1 gap-4  transition-all lg:grid-cols-2">
-          <Card className="mt-2 h-full rounded-2xl border border-solid shadow-md">
+          <Card className="mt-2 h-full rounded-2xl border border-solid pt-4 shadow-md">
             <CardHeader className="flex items-center justify-between px-4 pb-0 pt-2">
               <p className="text-sm font-bold uppercase">Total Revenue</p>
             </CardHeader>
@@ -102,7 +88,7 @@ const DashBoardPage = () => {
           </Card>
           <Card className="mt-2 h-full rounded-2xl border border-solid pt-4 shadow-md">
             <CardHeader className="flex items-center justify-between px-4 pb-0 pt-2">
-              <p className="text-sm font-bold uppercase">Total Revenue</p>
+              <p className="text-sm font-bold uppercase">Users</p>
             </CardHeader>
             <CardBody className="overflow-visible px-4 py-4 ">
               {uesrSalesData.map((d, i) => (

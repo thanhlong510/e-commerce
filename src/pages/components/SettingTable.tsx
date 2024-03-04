@@ -39,13 +39,13 @@ interface Setting {
   ];
   const SettingTable = () => {
     return (
-      <div>
-        <div className="mb-8 mt-6">
+      <div className="px-4">
+        <div className="mb-8  ">
           <Input
             key="outside"
             labelPlacement="outside"
             placeholder="Search"
-            className="max-w-40 rounded-lg border border-solid p-2"
+            className="max-w-60 rounded-lg border border-solid p-2"
           />
         </div>
         <DataTable columns={columns} data={data} />

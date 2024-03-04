@@ -7,9 +7,7 @@ const Footer = () => {
             <div className="top grid gay-10 py-[50px] lg:grid-cols-5 px-[5%] grid-cols-2 md:grid-cols-3">
                 <div className="cols col-span-1">
                     <div className="flex gap-3 my-3 mt-0 pt-0 text-[#FFFFFFCC] hover:text-violet-700 duration-300 cursor-pointer">
-                        <div className="">
-                            <img src="./logo.png" alt=""/>
-                        </div>
+                       
                     </div>
                     <div className="flex gap-3 my-3 text-[#FFFFFFCC] hover:text-violet-700 duration-300 cursor-pointer">
                         <div className="">
@@ -27,7 +25,7 @@ const Footer = () => {
                         <div className="">
                             <img src="./img/Message.png" alt=""/>
                         </div>
-                        support@lyratechnologies.com.au
+                        support@lyratechnologies
                     </div>
                     <div className="flex gap-[15px] mt-[10px]">
                         <img className="cursor-pointer hover:mt-[-5px] hover:mb-[5px] duration-300" src="./img/facebook.png"

@@ -52,7 +52,7 @@ const data = [{
 const BarChart = () => {
   return (
     <div>
-      <ResponsiveContainer width={'100%'} height={300}>
+      <ResponsiveContainer width={'100%'} height={400}>
         <BarGraph data={data}>
           <XAxis dataKey={'name'}
           tickLine = {false}
