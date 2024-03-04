@@ -1,26 +1,18 @@
-import { useRouter } from "next/router";
 import React from "react";
-import { FaCartArrowDown } from "react-icons/fa";
-import { IoIosAdd } from "react-icons/io";
 import SideNavbar from "~/components/ui/SideBar";
-import OrderTable from "~/pages/components/OrderTable";
-
-const Orders = () => {
+import { IoIosAdd } from "react-icons/io";
+import { useRouter } from "next/router";
+import AdminProduct from "./components/AdminProduct";
+const Test = () => {
   const router = useRouter();
-
   return (
-    <div>
-      <div className="flex min-h-screen w-full bg-white text-black">
+    <div className="flex min-h-screen w-full bg-white text-black">
       <SideNavbar />
       <div className="w-full px-8 pt-2">
       <div className="p-4">
         <div className="mb-4 flex items-center justify-between border-b border-solid pb-4">
           <div>
-            <div className="flex items-center space-x-2 text-4xl font-bold text-slate-950 ">
-              <div className="">Orders</div>
-              <FaCartArrowDown />
-            </div>
-
+            <div className="text-4xl font-bold text-slate-950">Products</div>
             <div className="text-lg text-slate-600">
               Manage products for your store
             </div>
@@ -37,12 +29,14 @@ const Orders = () => {
           </button>
         </div>
       </div>
-      <OrderTable/>
+      <div className="p-4">
+            <AdminProduct/>
+          
+      </div>
       </div>
       
-    </div>
     </div>
   );
 };
 
-export default Orders;
+export default Test;

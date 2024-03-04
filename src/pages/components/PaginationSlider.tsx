@@ -42,7 +42,7 @@ const PaginationSlider: React.FC = () => {
                   isZoomed
                   src={`/slider${index + 1}.jpg`}
                   alt={`Image ${index + 1}`}
-                  className="h-[500px] w-[415px] object-cover opacity-100"
+                  className="h-[500px] w-[415px] object-cover opacity-100 "
                 />
                 <CardFooter className="text-small z-20 opacity-80 absolute bottom-0 left-0 right-0 bg-white">
                   <div className="p-4 w-full">

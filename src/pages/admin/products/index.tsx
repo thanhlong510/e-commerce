@@ -1,15 +1,17 @@
 import { useRouter } from "next/router";
 import React from "react";
 import { IoIosAdd } from "react-icons/io";
+import SideNavbar from "~/components/ui/SideBar";
 import AdminProduct from "~/pages/components/AdminProduct";
-import Navbar from "~/pages/components/Navbar";
 
 const Products = () => {
   const router = useRouter();
 
   return (
     <div>
-      <Navbar />
+      <div className="flex min-h-screen w-full bg-white text-black">
+      <SideNavbar />
+      <div className="w-full px-8 pt-2">
       <div className="p-4">
         <div className="mb-4 flex items-center justify-between border-b border-solid pb-4">
           <div>
@@ -32,7 +34,11 @@ const Products = () => {
       </div>
       <div className="p-4">
             <AdminProduct/>
+          
       </div>
+      </div>
+      
+    </div>
     </div>
   );
 };
