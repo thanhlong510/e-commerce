@@ -6,7 +6,7 @@ import { BsCartDashFill } from "react-icons/bs";
 import Link from "next/link";
 const PaginationSlider: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
-  const slideWidth = 250; // Chiều rộng của mỗi slide
+  const slideWidth = 300; // Chiều rộng của mỗi slide
   const totalSlides = 7; // Tổng số slide
 
   const prevSlide = () => {
