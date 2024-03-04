@@ -2,7 +2,7 @@ import React from "react";
 import DashBoardPage from "../components/DashBoardPage";
 import { FaArrowsRotate } from "react-icons/fa6";
 import { MdDashboard } from "react-icons/md";
-import SideNavbar from "~/components/ui/SideBar";
+import SideNavbar from "~/components/SideBar";
 import ButtonTime from "../components/ButtonTime";
 const Overview = () => {
   return (

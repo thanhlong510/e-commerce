@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import React from "react";
 import { IoIosAdd } from "react-icons/io";
-import SideNavbar from "~/components/ui/SideBar";
+import SideNavbar from "~/components/SideBar";
 import AdminProduct from "~/pages/components/AdminProduct";
 
 const Products = () => {

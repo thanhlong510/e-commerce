@@ -1,5 +1,5 @@
 import React from "react";
-import SideNavbar from "~/components/ui/SideBar";
+import SideNavbar from "~/components/SideBar";
 
 const Settings = () => {
   return (
