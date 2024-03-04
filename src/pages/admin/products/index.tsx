@@ -32,7 +32,7 @@ const Products = () => {
           </button>
         </div>
       </div>
-      <div className="p-4">
+      <div className="px-4">
             <AdminProduct/>
           
       </div>

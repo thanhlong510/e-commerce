@@ -26,9 +26,9 @@ const secondPart = parts[2]; // Lấy phần tử tương ứng với dấu '/' 
       label: "Overview",
     },
     {
-      href: `/admin/billboards`,
-      active:`billboards`,
-      label: "Billboards",
+      href: `/admin/users`,
+      active:`users`,
+      label: "Users",
     },
     {
       href: `/admin/products`,

@@ -15,10 +15,12 @@ import {
   Settings,
   ChevronRight,
   ChevronLeft,
-  ShoppingBag
+  ShoppingBag,
+  Store
 } from "lucide-react";
 import { Button } from "~/components/ui/button";
-
+import Link from "next/link";
+import { IoStorefrontOutline } from "react-icons/io5";
 
 
 export default function SideNavbar({}: Props) {
@@ -31,7 +33,7 @@ export default function SideNavbar({}: Props) {
 
   return (
     <div className="relative min-w-[80px] border-r px-3  pb-10 pt-24 ">
-    
+     
         <div className="absolute right-[-20px] top-7">
           <Button
             onClick={toggleSidebar}
@@ -48,6 +50,12 @@ export default function SideNavbar({}: Props) {
       <Nav
         isCollapsed={isCollapsed}
         links={[
+          {
+            title: "Your Store",
+            href: "/",
+            icon: Store,
+            variant: "default"
+          },
           {
             title: "Dashboard",
             href: "/admin/overview",

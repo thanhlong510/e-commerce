@@ -3,13 +3,23 @@ import {
   Card,
   CardHeader,
   CardBody,
-  Image
+  Image,
+  Input
 } from "@nextui-org/react";
 import { GoPencil } from "react-icons/go";
 
 const AdminProduct = () => {
   return (
-    <div className=" grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+    <div>
+      <div className="mb-8">
+        <Input
+          key="outside"
+          labelPlacement="outside"
+          placeholder="Search"
+          className="max-w-60 rounded-lg border border-solid p-2"
+        />
+      </div>
+      <div className=" grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
       <Card className=" rounded-md border border-solid shadow-lg">
         <CardHeader className=" pb-0 ">
           <Image
@@ -284,6 +294,8 @@ const AdminProduct = () => {
         </CardBody>
       </Card>
     </div>
+    </div>
+   
   );
 };
 

@@ -5,9 +5,7 @@ import { type AppType } from "next/app";
 import { api } from "~/utils/api";
 
 import "~/styles/globals.css";
-import Navbar from "./components/Navbar";
 import { NextUIProvider } from "@nextui-org/react";
-import StoreNav from "./components/StoreNav";
 import {Jost} from '@next/font/google'
 
 const jost = Jost({
@@ -24,6 +22,7 @@ const MyApp: AppType<{ session: Session | null }> = ({
         {/* <Navbar /> */}
         <main className={jost.className}>
         <Component {...pageProps}  />
+       
         </main> 
         
 

@@ -17,7 +17,7 @@ const OrderTable = () => {
           key="outside"
           labelPlacement="outside"
           placeholder="Search"
-          className="max-w-40 rounded-lg border border-solid p-2"
+          className="max-w-60 rounded-lg border border-solid p-2"
         />
       </div>
 
@@ -84,7 +84,7 @@ const OrderTable = () => {
             </TableCell>
             <TableCell className=" text-center font-bold text-white">
               <button className=" h-[40px] w-[134px] rounded-full bg-red-600 hover:cursor-default">
-                COMPLETE
+                FAILED
               </button>
             </TableCell>
           </TableRow>

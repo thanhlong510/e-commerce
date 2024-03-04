@@ -1,27 +1,30 @@
 import React from "react";
 import TitleHeader from "../../components/TitileHeader";
 import { Input } from "@nextui-org/react";
+import Navbar from "~/pages/components/Navbar";
 const CreateProduct = () => {
-  return (
+  return (<div>
+    <Navbar/>
     <div className="p-4 ">
+      
       <TitleHeader
-        header="Create your Colors"
+        header="Create your Orders"
         subHeader="Add a new color"
       />
-      <div className="flex items-center justify-between space-x-10 md:space-x-30">
+      <div className="flex items-center space-x-5 md:space-x-32">
         <div>
-          <p className="text-xl mb-3 font-bold">Name</p>
+          <p className="text-xl mb-3 font-bold">Item</p>
           <Input
             key="outside-left"
-            placeholder="Category name"
+            placeholder="Item"
             className=" min-w-[100px] max-w-[450px] rounded-lg border"
           />
         </div>
         <div>
-          <p className="text-xl mb-3 font-bold">Billboard</p>
+          <p className="text-xl mb-3 font-bold">Method</p>
           <Input
             key="outside-left"
-            placeholder="Category name"
+            placeholder="Method"
             className=" min-w-[100px] max-w-[450px] rounded-lg border"
           />
         </div>
@@ -32,6 +35,8 @@ const CreateProduct = () => {
         Create
       </button>
     </div>
+  </div>
+    
   );
 };
 

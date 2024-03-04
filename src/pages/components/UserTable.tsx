@@ -142,7 +142,7 @@ const UserTable = () => {
           key="outside"
           labelPlacement="outside"
           placeholder="Search"
-          className="max-w-40 rounded-lg border border-solid p-2"
+          className="max-w-60 rounded-lg border border-solid p-2"
         />
       </div>
       <DataTable columns={columns} data={data} />

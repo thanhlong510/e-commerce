@@ -4,6 +4,7 @@ import StoreNav from "./components/StoreNav";
 import PaginationSlider from "./components/PaginationSlider";
 import ItemCategory from "./components/ItemCategory";
 import SaleSection from "./components/SaleSection";
+import Footer from "./components/Footer";
 export default function Home() {
   return (
     <>
@@ -21,7 +22,7 @@ export default function Home() {
             <IntroductionBillBoard />
           </div>
         </div>
-        <ItemCategory/>
+        <ItemCategory />
 
         <div className="flex items-center justify-center">
           <div className="flex-grow border-t border-gray-300"></div>
@@ -32,9 +33,9 @@ export default function Home() {
           <PaginationSlider />
         </div>
         <div className="mb-20">
-        <SaleSection/>
+          <SaleSection />
         </div>
-       
+        <Footer />
       </div>
     </>
   );

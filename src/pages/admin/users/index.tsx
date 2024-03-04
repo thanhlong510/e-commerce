@@ -1,7 +1,5 @@
 import { useRouter } from "next/router";
 import React from "react";
-
-import BillboardTable from "~/pages/components/BillboardTable";
 import { IoIosAdd } from "react-icons/io";
 import SideNavbar from "~/components/SideBar";
 import UserTable from "~/pages/components/UserTable";
@@ -34,7 +32,6 @@ const Billboards = () => {
               </div>
             </button>
           </div>
-
           <UserTable/>
         </div>
       </div>

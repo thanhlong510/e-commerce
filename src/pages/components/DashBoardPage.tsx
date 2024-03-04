@@ -32,13 +32,28 @@ const uesrSalesData = [
     email: "sofia.davis@email.com",
     saleAmount: "+$39.00",
   },
+  {
+    name: "Snickers",
+    email: "snicker.martin@email.com",
+    saleAmount: "+$1,999.00",
+  },
+  {
+    name: "Jasper",
+    email: "jasper.nguyen@email.com",
+    saleAmount: "+$1,999.00",
+  },
+  {
+    name: "Misty",
+    email: "misty.nguyen@email.com",
+    saleAmount: "+$299.00",
+  }
 ];
 
 const DashBoardPage = () => {
   return (
     <div>
       <div>
-        <div className="grid  grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
+        <div className="grid  grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4 ">
           <Card className="rounded-2xl border border-solid py-4 shadow-md">
             <CardHeader className="flex items-center justify-between px-4 pb-0 pt-2">
               <p className="text-sm font-bold uppercase">Total Revenue</p>
@@ -85,7 +100,7 @@ const DashBoardPage = () => {
               <BarChart />
             </CardBody>
           </Card>
-          <Card className="mt-2 h-full rounded-2xl border border-solid py-4 shadow-md">
+          <Card className="mt-2 h-full rounded-2xl border border-solid pt-4 shadow-md">
             <CardHeader className="flex items-center justify-between px-4 pb-0 pt-2">
               <p className="text-sm font-bold uppercase">Total Revenue</p>
             </CardHeader>
@@ -96,6 +111,7 @@ const DashBoardPage = () => {
                   email={d.email}
                   name={d.name}
                   saleAmount={d.saleAmount}
+              
                 />
               ))}
             </CardBody>

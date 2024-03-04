@@ -4,6 +4,7 @@ import { Image } from "@nextui-org/react";
 
 import { BsCart } from "react-icons/bs";
 import Tabs from "../components/Tabs";
+import Footer from "../components/Footer";
 const Product = () => {
   return (
     <div>
@@ -54,7 +55,7 @@ const Product = () => {
       <div className="mx-24 my-20">
       <Tabs/>
       </div>
-      
+      <Footer/>
     </div>
   );
 };

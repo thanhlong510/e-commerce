@@ -13,14 +13,14 @@ const StoreNav = () => {
         <a href="./" className="text-3xl font-semibold">Fashion Store</a>
         <div className="flex items-center">
           <button className="block md:hidden"></button>
-          <div className="flex items-center space-x-4 ">
+          <div className="flex items-center spacex-x-1 md:space-x-6 ">
             <Link href={"/"} >
-              <div className=" hover:text-red-600 hidden md:block flex items-center text-2xl font-medium">
+              <div className=" hover:text-red-600  md:block flex items-center text-2xl font-medium">
                 <p>Home</p>
                
               </div>
             </Link>
-            <Link href={"/"}>
+            <Link href={"/shop"}>
               <div className=" hover:text-red-600 flex items-center text-2xl font-medium">
                 <p>Shop</p>
              
@@ -28,14 +28,18 @@ const StoreNav = () => {
             </Link>
             <Link href={"/"}>
               <div className=" hover:text-red-600 flex items-center text-2xl font-medium">
-                <p>Men</p>
+                <p>About</p>
             
               </div>
             </Link>
             <Link href={"/"}>
               <div className=" hover:text-red-600 flex items-center text-2xl font-medium">
-                <p>Women</p>
-               
+                <p>Faq</p>
+              </div>
+            </Link>
+            <Link href={"/"}>
+              <div className=" hover:text-red-600 flex items-center text-2xl font-medium">
+                <p>Contact</p>
               </div>
             </Link>
           </div>
