@@ -8,21 +8,40 @@ const CreateBillboard = () => {
   const router = useRouter();
   const [fileName, setFileName] = useState("a");
   const [input, setInput] = useState("");
+  const [itemName, setItemName] = useState("");
+  const [itemPrice, setItemPrice] = useState('');
+  const [itemDescription, setItemDescription] = useState("");
   const { data: url, refetch } = api.file.getUrl.useQuery({
     fileName: fileName,
   });
   const submit = api.billboard.create.useMutation();
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setInput(e.target.value);
+  const creatProduct = api.product.create.useMutation()
+  const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setItemName(e.target.value);
   };
+  const handlePriceChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setItemPrice(e.target.value);
+  };
+  const handleDescriptionChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setItemDescription(e.target.value);
+  };
+
   const handleSubmit = async () => {
     try {
-      submit.mutate({
+       submit.mutate({
         name: input,
         imageUrl: fileName,
       });
       // Clear form after successful submission
-      setInput("");
+      creatProduct.mutate({
+        description:itemDescription,
+        name:itemName,
+        price:itemPrice,
+        imageName: 'svsdv'
+      })
+      setItemName('');
+      setItemPrice("");
+      setItemDescription("");
     } catch (error) {
       console.error("Error submitting post:", error);
     } finally {
@@ -36,22 +55,31 @@ const CreateBillboard = () => {
         {Array.isArray(url) && url.length > 0 ? (
           <img className="h-32 w-32" src={url[0]} />
         ) : null}
+
         <div>
           <input
-            value={input}
-            onChange={handleInputChange}
+            value={itemName}
+            onChange={handleNameChange}
             placeholder="Name of your Product"
           />
         </div>
 
         <div>
           <input
-            value={input}
-            onChange={handleInputChange}
+            type="number"
+            value={itemPrice}
+            onChange={handlePriceChange}
             placeholder="Price of your Product"
           />
         </div>
         <div>
+          <input
+            value={itemDescription}
+            onChange={handleDescriptionChange}
+            placeholder="Name of your Product"
+          />
+        </div>
+        {/* <div>
           <input
             value={input}
             onChange={handleInputChange}
@@ -64,7 +92,7 @@ const CreateBillboard = () => {
             onChange={handleInputChange}
             placeholder="Description"
           />
-        </div>
+        </div> */}
         <div>
           <button onClick={handleSubmit}>Create</button>
         </div>
