@@ -41,7 +41,7 @@ const Create = () => {
       <button className="px-2 py-1 mt-3 font-bold rounded-md text-slate-200 hover:text-slate-400 bg-black  ">
         Create
       </button>
-    {/* <CreateBillboard/> */}
+    
   </div>
     </div>
     

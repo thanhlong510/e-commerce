@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
+import { InputFile } from "~/components/InputFile";
+import { Label } from "~/components/ui/label";
 
 interface UploadFileProps {
-  fileName?: string
-  userId?:string
-  setFileName: (a:string)=> void
-  refetch?: void
+  fileName?: string;
+  userId?: string;
+  setFileName: (a: string) => void;
+  refetch?: void;
 }
 
 export function useFileUpload() {
@@ -22,8 +24,13 @@ export function useFileUpload() {
     return upload.ok;
   };
 }
-// Lấy thời gian tạo + user Id + coverphoto 
-const UploadFile: React.FC<UploadFileProps> = ({fileName, userId, setFileName, refetch}) => {
+// Lấy thời gian tạo + user Id + coverphoto
+const UploadFile: React.FC<UploadFileProps> = ({
+  fileName,
+  userId,
+  setFileName,
+  refetch,
+}) => {
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const uploadFile = useFileUpload();
   // const a =  api.profile.addAvatarImage.useMutation()
@@ -34,14 +41,17 @@ const UploadFile: React.FC<UploadFileProps> = ({fileName, userId, setFileName, r
           // Handle case when no file is selected
           return;
         }
-        const uploadOk = await uploadFile(fileName ?? selectedFile.name, selectedFile);
+        const uploadOk = await uploadFile(
+          fileName ?? selectedFile.name,
+          selectedFile,
+        );
         if (uploadOk) {
           // await a.mutateAsync({
           //   userId:userId ?? '',
-          //   avatarImage:`${userId}avatar` 
+          //   avatarImage:`${userId}avatar`
           // })
-       
-          setFileName(selectedFile.name ??'')
+
+          setFileName(selectedFile.name ?? "");
           console.log("Upload successful");
         } else {
           // show error
@@ -70,13 +80,14 @@ const UploadFile: React.FC<UploadFileProps> = ({fileName, userId, setFileName, r
         <button className="relative z-10 rounded  p-4    focus:outline-none focus:ring">
           Add Image
         </button>
-
-        <input
-          type="file"
-          className="absolute left-0 top-0 z-10 h-full w-full cursor-pointer opacity-0"
-          onChange={handleFileSelect}
-        />
-      
+        <div className="grid w-full max-w-sm items-center gap-1.5">
+          <Label htmlFor="picture">Picture</Label>
+          <input
+            type="file"
+            className="absolute left-0 top-0 z-10 flex h-9 w-full cursor-pointer rounded-md border border-input bg-transparent px-3 py-1 text-sm opacity-0 shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
+            onChange={handleFileSelect}
+          />
+        </div>
       </label>
     </div>
   );
