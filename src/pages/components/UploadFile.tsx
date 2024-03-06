@@ -46,11 +46,6 @@ const UploadFile: React.FC<UploadFileProps> = ({
           selectedFile,
         );
         if (uploadOk) {
-          // await a.mutateAsync({
-          //   userId:userId ?? '',
-          //   avatarImage:`${userId}avatar`
-          // })
-
           setFileName(selectedFile.name ?? "");
           console.log("Upload successful");
         } else {
@@ -81,7 +76,6 @@ const UploadFile: React.FC<UploadFileProps> = ({
           Add Image
         </button>
         <div className="grid w-full max-w-sm items-center gap-1.5">
-          <Label htmlFor="picture">Picture</Label>
           <input
             type="file"
             className="absolute left-0 top-0 z-10 flex h-9 w-full cursor-pointer rounded-md border border-input bg-transparent px-3 py-1 text-sm opacity-0 shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"

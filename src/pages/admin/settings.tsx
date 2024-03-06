@@ -1,6 +1,7 @@
 import React from "react";
 import SideNavbar from "~/components/SideBar";
 import SettingTable from "../components/SettingTable";
+import CreateFeature from "../components/CreateFeature";
 
 
 const Settings = () => {
@@ -24,8 +25,16 @@ const Settings = () => {
             </div>
           </div>
           <SettingTable />
+          <div className="p-4">
+          <CreateFeature featureType="color" placeholderName="Color Name" placeholderValue="Color Value" />
+          </div>
+          <div className="p-4 mt-4">
+          <CreateFeature featureType="size" placeholderName="Size Name" placeholderValue="Size Value" />
+          </div>
         </div>
+  
       </div>
+    
     </div>
   );
 };

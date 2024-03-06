@@ -16,30 +16,8 @@ const Shop = () => {
       </div>
       <div className="mb-20 mt-12 mx-10">
         <div className=" grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          <Link href={"./product"}>
-            <Card className=" rounded-md border border-solid shadow-lg">
-              <CardHeader className=" pb-0 ">
-                <Image
-                  isZoomed
-                  alt="Card background"
-                  className=" border-b border-solid object-cover opacity-100"
-                  src="/slider1.jpg"
-                  width={"100%"}
-                  height={"auto"}
-                />
-              </CardHeader>
-              <CardBody className="overflow-visible p-2 ">
-                <p className="text-center text-lg font-bold uppercase text-black">
-                  Trendy woman black blazer
-                </p>
-
-                <p className="mb-2 text-center text-lg  font-semibold text-green-400 text-slate-500">
-                  $30.00
-                </p>
-              </CardBody>
-            </Card>
-          </Link>
-          <Link href={"./product"}>
+          
+          {/* <Link href={"./product"}>
             <Card className=" rounded-md border border-solid shadow-lg">
               <CardHeader className=" pb-0 ">
                 <Image
@@ -131,7 +109,7 @@ const Shop = () => {
                 </p>
               </CardBody>
             </Card>
-          </Link>
+          </Link> */}
         </div>
       </div>
       <Footer/>

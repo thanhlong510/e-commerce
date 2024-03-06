@@ -4,17 +4,17 @@ import { useRouter } from "next/router";
 import React, { useState } from "react";
 import UploadFile from "./UploadFile";
 
-const CreateBillboard = () => {
-  const router = useRouter();
+const CreateProduct = () => {
+
   const [fileName, setFileName] = useState("a");
   const [input, setInput] = useState("");
   const [itemName, setItemName] = useState("");
   const [itemPrice, setItemPrice] = useState('');
   const [itemDescription, setItemDescription] = useState("");
-  const { data: url, refetch } = api.file.getUrl.useQuery({
+  const { data: presignedUrl, refetch } = api.file.getUrl.useQuery({
     fileName: fileName,
   });
-  const submit = api.billboard.create.useMutation();
+
   const creatProduct = api.product.create.useMutation()
   const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setItemName(e.target.value);
@@ -28,16 +28,13 @@ const CreateBillboard = () => {
 
   const handleSubmit = async () => {
     try {
-       submit.mutate({
-        name: input,
-        imageUrl: fileName,
-      });
+      const imageName: string = presignedUrl && typeof presignedUrl[0] === 'string' ? presignedUrl[0] : '';
       // Clear form after successful submission
       creatProduct.mutate({
         description:itemDescription,
         name:itemName,
         price:itemPrice,
-        imageName: 'svsdv'
+        fileName: itemName
       })
       setItemName('');
       setItemPrice("");
@@ -48,12 +45,13 @@ const CreateBillboard = () => {
       // await router.push("/");
     }
   };
+  console.log(presignedUrl)
   return (
     <>
       <div>
         <UploadFile key={fileName} setFileName={setFileName} />
-        {Array.isArray(url) && url.length > 0 ? (
-          <img className="h-32 w-32" src={url[0]} />
+        {Array.isArray(presignedUrl) && presignedUrl.length > 0 ? (
+          <img className="h-32 w-32" src={presignedUrl[0]} />
         ) : null}
 
         <div>
@@ -101,4 +99,4 @@ const CreateBillboard = () => {
   );
 };
 
-export default CreateBillboard;
+export default CreateProduct;

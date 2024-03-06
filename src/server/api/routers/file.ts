@@ -32,7 +32,7 @@ const getFile = async (a: string) => {
 export const fileRouter = createTRPCRouter({
   getUrl: publicProcedure
     .input(z.object({ fileName: z.string() }))
-    .query(async ({ input }) => {
+    .query(async ({ ctx,input }) => {
       const a = await getFile(input.fileName);
       return a;
     }),
