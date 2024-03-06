@@ -88,6 +88,7 @@ export const productRouter = createTRPCRouter({
           },
         },
       },
+      orderBy: [{ createdAt: "desc" }]
     });
   }),
 });

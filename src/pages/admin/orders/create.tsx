@@ -2,7 +2,7 @@ import React from "react";
 import TitleHeader from "../../components/TitileHeader";
 import { Input } from "@nextui-org/react";
 import Navbar from "~/pages/components/Navbar";
-const CreateProduct = () => {
+const CreateOrderPage = () => {
   return (<div>
     <Navbar/>
     <div className="p-4 ">
@@ -40,4 +40,4 @@ const CreateProduct = () => {
   );
 };
 
-export default CreateProduct;
+export default CreateOrderPage;

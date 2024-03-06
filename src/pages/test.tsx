@@ -27,7 +27,7 @@ const Test = () => {
   return (
     <div >
      <CreateProduct/>
-    <MultiSelectCategory handleInterestToggle={handleInterestToggle} selectedInterests={selectedInterests}/>
+    {/* <MultiSelectCategory handleInterestToggle={handleInterestToggle} selectedInterests={selectedInterests}/> */}
     </div>
   );
 };

@@ -72,7 +72,7 @@ const UploadFile: React.FC<UploadFileProps> = ({
   return (
     <div>
       <label className="relative flex cursor-pointer items-center">
-        <button className="relative z-10 rounded  p-4    focus:outline-none focus:ring">
+        <button className="relative z-10 rounded  p-4  focus:outline-none focus:ring">
           Add Image
         </button>
         <div className="grid w-full max-w-sm items-center gap-1.5">

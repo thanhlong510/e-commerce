@@ -1,21 +1,18 @@
 "use client";
 import { api } from "~/utils/api";
-import { useRouter } from "next/router";
 import React, { useState } from "react";
 import UploadFile from "./UploadFile";
-
+import { Input } from "@nextui-org/react";
 const CreateProduct = () => {
-
   const [fileName, setFileName] = useState("a");
-  const [input, setInput] = useState("");
   const [itemName, setItemName] = useState("");
-  const [itemPrice, setItemPrice] = useState('');
+  const [itemPrice, setItemPrice] = useState("");
   const [itemDescription, setItemDescription] = useState("");
-  const { data: presignedUrl, refetch } = api.file.getUrl.useQuery({
+  const { data: presignedUrl } = api.file.getUrl.useQuery({
     fileName: fileName,
   });
 
-  const creatProduct = api.product.create.useMutation()
+  const creatProduct = api.product.create.useMutation();
   const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setItemName(e.target.value);
   };
@@ -28,15 +25,18 @@ const CreateProduct = () => {
 
   const handleSubmit = async () => {
     try {
-      const imageName: string = presignedUrl && typeof presignedUrl[0] === 'string' ? presignedUrl[0] : '';
+      const imageName: string =
+        presignedUrl && typeof presignedUrl[0] === "string"
+          ? presignedUrl[0]
+          : "";
       // Clear form after successful submission
       creatProduct.mutate({
-        description:itemDescription,
-        name:itemName,
-        price:itemPrice,
-        fileName: itemName
-      })
-      setItemName('');
+        description: itemDescription,
+        name: itemName,
+        price: itemPrice,
+        fileName: fileName,
+      });
+      setItemName("");
       setItemPrice("");
       setItemDescription("");
     } catch (error) {
@@ -45,36 +45,47 @@ const CreateProduct = () => {
       // await router.push("/");
     }
   };
-  console.log(presignedUrl)
+
   return (
     <>
       <div>
         <UploadFile key={fileName} setFileName={setFileName} />
-        {Array.isArray(presignedUrl) && presignedUrl.length > 0 ? (
-          <img className="h-32 w-32" src={presignedUrl[0]} />
-        ) : null}
+
+        {presignedUrl === "undefined" ? (
+          ""
+        ) : (
+          <img className="h-32 w-32" src={presignedUrl} />
+        )}
 
         <div>
-          <input
+        <p className="text-xl mb-3 font-bold">Name</p>
+          <Input
             value={itemName}
             onChange={handleNameChange}
             placeholder="Name of your Product"
+            className="min-w-[100px] max-w-[450px] rounded-lg border"
           />
         </div>
 
         <div>
-          <input
+        <p className="text-xl mb-3 font-bold">Price</p>
+          <Input
             type="number"
+         
             value={itemPrice}
             onChange={handlePriceChange}
             placeholder="Price of your Product"
+            className=" min-w-[100px] max-w-[450px] rounded-lg border"
           />
         </div>
         <div>
-          <input
+        <p className="text-xl mb-3 font-bold">Description</p>
+          <Input
+          
             value={itemDescription}
             onChange={handleDescriptionChange}
-            placeholder="Name of your Product"
+            placeholder="Description"
+            className="min-w-[100px] max-w-[450px] rounded-lg border"
           />
         </div>
         {/* <div>
@@ -92,7 +103,7 @@ const CreateProduct = () => {
           />
         </div> */}
         <div>
-          <button onClick={handleSubmit}>Create</button>
+          <button className="px-2 py-1 mt-5 font-bold rounded-md text-slate-200 hover:text-slate-400 bg-black  " onClick={handleSubmit}>Create</button>
         </div>
       </div>
     </>

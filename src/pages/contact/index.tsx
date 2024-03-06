@@ -13,7 +13,7 @@ const Contact = () => {
           <p className=" font-semibold">Contact</p>
         </div>
       </div>
-      <div className="mx-[100px] grid grid-cols-2 gap-8 mt-10 ">
+      <div className="mx-[100px] grid grid-cols-1 md:grid-cols-2 gap-8 mt-10 ">
         <div>
           <p className="text-2xl font-bold mb-8">Our Company</p>
           <p className="text-slate-500">
