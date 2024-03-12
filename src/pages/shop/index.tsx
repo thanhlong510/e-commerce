@@ -1,118 +1,76 @@
 import React from "react";
 import StoreNav from "../components/StoreNav";
-import { Card, CardHeader, CardBody, Image, Input } from "@nextui-org/react";
-import Link from "next/link";
 import Footer from "../components/Footer";
+import { api } from "~/utils/api";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "~/components/ui/card";
+import Link from "next/link";
 
 const Shop = () => {
+  const { data: products } = api.product.getAllProduct.useQuery();
+  const arra: string[] = [];
+  const b = products?.map((a) => {
+    a.attachment.map((c) => {
+      arra.push(c.file.fileName ?? "");
+    });
+  });
+
+  const { data: presignedUrls } = api.file.getUrls.useQuery({
+    fileName: arra,
+  });
+
   return (
     <div>
       <StoreNav />
-      <div className="relative mt-[100px] text-4xl ">
-        <img src="./banner.jpg" className="h-auto w-full " />
-        <div className="absolute inset-x-0 top-12 flex items-center justify-center">
+      <div className="relative mt-[100px] w-full text-4xl ">
+        <div className="absolute left-0 top-0 flex h-full w-full items-center justify-center">
           <p className=" font-semibold">Shop</p>
         </div>
+        <img src="./banner.jpg" className="h-auto w-full " />
       </div>
-      <div className="mb-20 mt-12 mx-10">
-        <div className=" grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          
-          {/* <Link href={"./product"}>
-            <Card className=" rounded-md border border-solid shadow-lg">
-              <CardHeader className=" pb-0 ">
-                <Image
-                  isZoomed
-                  alt="Card background"
-                  className=" border-b border-solid object-cover opacity-100"
-                  src="/shirt-1.jpg"
-                  width={"100%"}
-                  height={"auto"}
-                />
-              </CardHeader>
-              <CardBody className="overflow-visible p-2 ">
-                <p className="text-center text-lg font-bold uppercase text-black">
-                  Blue shirt
-                </p>
-
-                <p className="mb-2 text-center text-lg  font-semibold text-green-400 text-slate-500">
-                  $30.00
-                </p>
-              </CardBody>
-            </Card>
-          </Link>
-          <Link href={"./product"}>
-            <Card className=" rounded-md border border-solid shadow-lg">
-              <CardHeader className=" pb-0 ">
-                <Image
-                  isZoomed
-                  alt="Card background"
-                  className=" border-b border-solid object-cover opacity-100"
-                  src="/shirt-2.jpg"
-                  width={"100%"}
-                  height={"auto"}
-                />
-              </CardHeader>
-              <CardBody className="overflow-visible p-2 ">
-                <p className="text-center text-lg font-bold uppercase text-black">
-                  Classic watch
-                </p>
-
-                <p className="mb-2 text-center text-lg  font-semibold text-green-400 text-slate-500">
-                  $88.00
-                </p>
-              </CardBody>
-            </Card>
-          </Link>
-          <Link href={"./product"}>
-            <Card className=" rounded-md border border-solid shadow-lg">
-              <CardHeader className=" pb-0 ">
-                <Image
-                  isZoomed
-                  alt="Card background"
-                  className=" border-b border-solid object-cover opacity-100"
-                  src="/shirt-3.jpg"
-                  width={"100%"}
-                  height={"auto"}
-                />
-              </CardHeader>
-              <CardBody className="overflow-visible p-2 ">
-                <p className="text-center text-lg font-bold uppercase text-black">
-                  Female bag
-                </p>
-
-                <p className="mb-2 text-center text-lg  font-semibold text-green-400 text-slate-500">
-                  $98.00
-                </p>
-              </CardBody>
-            </Card>
-          </Link>
-
-          <Link href={"./product"}>
-            <Card className=" rounded-md border border-solid shadow-lg">
-              <CardHeader className=" pb-0 ">
-                <Image
-                  isZoomed
-                  alt="Card background"
-                  className=" border-b border-solid object-cover opacity-100"
-                  src="/shirt-4.jpg"
-                  width={"100%"}
-                  height={"auto"}
-                />
-              </CardHeader>
-              <CardBody className="overflow-visible p-2 ">
-                <p className="text-center text-lg font-bold uppercase text-black">
-                  Floral Kirby
-                </p>
-
-                <p className="mb-2 text-center text-lg  font-semibold text-green-400 text-slate-500">
-                  $20.00
-                </p>
-              </CardBody>
-            </Card>
-          </Link> */}
+      <div className="mx-10 mb-20 mt-12">
+        <div className="grid grid-cols-4 gap-8">
+          {products?.map((product, index) => {
+            return (
+              <div key={product.id}>
+                <Link href={`./product/${product.id}`}>
+                  <Card>
+                    <CardHeader>
+                      {presignedUrls && presignedUrls.length > 0 ? (
+                        <img
+                          className="object-cover "
+                          height={"auto"}
+                          width={"full"}
+                          src={`${presignedUrls[index]}`}
+                        />
+                      ) : (
+                        ""
+                      )}
+                    </CardHeader>
+                    <CardContent>
+                      <CardTitle>
+                        <p className="text-center text-xs  md:text-xl ">{product.name}</p>
+                      </CardTitle>
+                      <CardDescription className="text-center text-xs md:text-lg font-semibold">
+                        ${" "}
+                        {product.price !== null
+                          ? product.price.toString()
+                          : "N/A"}
+                      </CardDescription>
+                    </CardContent>
+                  </Card>
+                </Link>
+              </div>
+            );
+          })}
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 };

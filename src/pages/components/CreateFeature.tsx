@@ -41,7 +41,7 @@ const CreateFeature: React.FC<CreateFeatureProps> = ({
         className="border px-3 py-4"
       />
       <input
-      value={value}
+        value={value}
         placeholder={placeholderValue}
         onChange={handleValueChange}
         className="border py-4 pl-3 pr-3"

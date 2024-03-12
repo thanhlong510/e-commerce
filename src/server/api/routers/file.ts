@@ -56,7 +56,6 @@ export const fileRouter = createTRPCRouter({
     .input(z.object({ fileName: z.array(z.string()) }))
     .query(async ({  input }) => {
       const a = await getFiles(input.fileName);
-      console.log(a)
       return a;
     }),
 });

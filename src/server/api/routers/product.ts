@@ -29,14 +29,61 @@ const getFile = async (a: string) => {
   }
 };
 export const productRouter = createTRPCRouter({
-  hello: publicProcedure
-    .input(z.object({ text: z.string() }))
-    .query(({ input }) => {
-      return {
-        greeting: `Hello ${input.text}`,
-      };
+  getProductbyId: publicProcedure
+    .input(z.object({ id: z.string() }))
+    .query(({ ctx, input }) => {
+      const product = ctx.db.product.findFirst({
+        where: {
+          id: input.id,
+        },
+        select: {
+          id: true,
+          name: true,
+          price: true,
+          description: true,
+          attachment: {
+            select: {
+              file: {
+                select: {
+                  fileName: true,
+                  url: true,
+                },
+              },
+            },
+          },
+        },
+      });
+      return product;
     }),
-
+    getProductbyIds: publicProcedure
+    .input(z.object({ ids: z.array(z.string()) }))
+    .query(({ ctx, input }) => {
+      const a = input.ids.map((id)=>{
+        // return ctx.db.product.findFirst({
+        //   where:{
+        //     id:id
+        //   },
+        //   select: {
+        //     id: true,
+        //     name: true,
+        //     price: true,
+        //     description: true,
+        //     attachment: {
+        //       select: {
+        //         file: {
+        //           select: {
+        //             fileName: true,
+        //             url: true,
+        //           },
+        //         },
+        //       },
+        //     },
+        //   },
+        // })
+        return id[0]
+      })
+      return a
+    }),
   create: publicProcedure
     .input(
       z.object({
@@ -70,6 +117,21 @@ export const productRouter = createTRPCRouter({
       });
       // simulate a slow db call
     }),
+  delete:publicProcedure
+  .input(
+    z.object({
+      productId:z.string()
+    }),
+  )
+  .mutation(async ({ ctx, input }) => {
+   return ctx.db.product.delete({
+    where:{
+      id:input.productId
+      
+    }
+   })
+    // simulate a slow db call
+  }),
   getAllProduct: publicProcedure.query(async ({ ctx, input }) => {
     return ctx.db.product.findMany({
       select: {
@@ -88,7 +150,8 @@ export const productRouter = createTRPCRouter({
           },
         },
       },
-      orderBy: [{ createdAt: "desc" }]
+      orderBy: [{ createdAt: "desc" }],
     });
   }),
+
 });

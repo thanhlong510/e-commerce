@@ -3,10 +3,11 @@ import React from "react";
 import { IoIosAdd } from "react-icons/io";
 import SideNavbar from "~/components/SideBar";
 import AdminProduct from "~/pages/components/AdminProduct";
+import { api } from "~/utils/api";
 
 const Products = () => {
   const router = useRouter();
-
+  
   return (
     <div>
       <div className="flex min-h-screen w-full bg-white text-black">

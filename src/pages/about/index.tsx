@@ -7,11 +7,12 @@ const About = () => {
   return (
     <div>
       <StoreNav />
-      <div className="relative mt-[100px] text-4xl">
-        <img src="./banner.jpg" className="h-auto w-full " />
-        <div className="absolute inset-x-0 top-12 flex items-center justify-center">
+      <div className="relative w-full mt-[100px] text-4xl">
+        
+        <div className="absolute w-full h-full top-0 left-0 flex items-center justify-center">
           <p className=" font-semibold">About</p>
         </div>
+        <img src="./banner.jpg" className="h-auto w-full " />
       </div>
       <div className="mx-[100px] grid grid-cols-3 "></div>
       <div className="mx-24 mb-28 mt-14 grid grid-cols-3 gap-8">

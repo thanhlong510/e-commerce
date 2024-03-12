@@ -6,7 +6,10 @@ import { GrUserAdmin } from "react-icons/gr";
 import { Tooltip } from "@nextui-org/react";
 import { Badge, Avatar } from "@nextui-org/react";
 import { BsCartCheck } from "react-icons/bs";
+import { useCartContext } from "./CartContext";
 const StoreNav = () => {
+  const {data,setData} = useCartContext()
+
   return (
     <div className=" py-5 fixed left-0  right-0 top-0 z-50 bg-white shadow-md">
       <div className="flex h-[60px]  items-center justify-between bg-transparent px-10 py-5 font-serif">
@@ -56,9 +59,11 @@ const StoreNav = () => {
               </Link>
             </button>
           </Tooltip>
-          <Badge content="5" size="sm" className=" bg-slate-500 border-none text-xs text-white px-[4px]">
+          <Badge content={data.length} size="sm" className=" bg-slate-500 border-none text-xs text-white px-[4px]">
             <button className="hover:text-red-500">
-            <BsCartCheck className="text-2xl"/>
+              <Link href={'/cart'}>
+                <BsCartCheck className="text-2xl"/>
+              </Link>
             </button>
                 
           </Badge>

@@ -48,62 +48,55 @@ const CreateProduct = () => {
 
   return (
     <>
-      <div>
-        <UploadFile key={fileName} setFileName={setFileName} />
+      <div className="grid grid-cols-2 space-x-16">
+        <div className="">
+          <div >
+            <p className="mb-1 text-xl font-bold">Name</p>
+            <Input
+              value={itemName}
+              onChange={handleNameChange}
+              placeholder="Name of your Product"
+              className="min-w-[100px] max-w-[450px] rounded-lg border"
+            />
+          </div >
 
-        {presignedUrl === "undefined" ? (
-          ""
-        ) : (
-          <img className="h-32 w-32" src={presignedUrl} />
-        )}
-
-        <div>
-        <p className="text-xl mb-3 font-bold">Name</p>
-          <Input
-            value={itemName}
-            onChange={handleNameChange}
-            placeholder="Name of your Product"
-            className="min-w-[100px] max-w-[450px] rounded-lg border"
-          />
+          <div className="mt-4">
+            <p className="mb-1 text-xl font-bold">Price</p>
+            <Input
+              type="number"
+              value={itemPrice}
+              onChange={handlePriceChange}
+              placeholder="Price of your Product"
+              className=" min-w-[100px] max-w-[450px] rounded-lg border"
+            />
+          </div>
+          <div className="mt-4">
+            <p className="mb-1 text-xl font-bold">Description</p>
+            <Input
+              value={itemDescription}
+              onChange={handleDescriptionChange}
+              placeholder="Description"
+              className="min-w-[100px] max-w-[450px] rounded-lg border"
+            />
+          </div>
+          <div>
+            <button
+              className="mt-5 rounded-md bg-black px-2 py-1 font-bold text-slate-200 hover:text-slate-400  "
+              onClick={handleSubmit}
+            >
+              Create
+            </button>
+          </div>
         </div>
 
         <div>
-        <p className="text-xl mb-3 font-bold">Price</p>
-          <Input
-            type="number"
-         
-            value={itemPrice}
-            onChange={handlePriceChange}
-            placeholder="Price of your Product"
-            className=" min-w-[100px] max-w-[450px] rounded-lg border"
-          />
-        </div>
-        <div>
-        <p className="text-xl mb-3 font-bold">Description</p>
-          <Input
-          
-            value={itemDescription}
-            onChange={handleDescriptionChange}
-            placeholder="Description"
-            className="min-w-[100px] max-w-[450px] rounded-lg border"
-          />
-        </div>
-        {/* <div>
-          <input
-            value={input}
-            onChange={handleInputChange}
-            placeholder="The sale price"
-          />
-        </div>
-        <div>
-          <input
-            value={input}
-            onChange={handleInputChange}
-            placeholder="Description"
-          />
-        </div> */}
-        <div>
-          <button className="px-2 py-1 mt-5 font-bold rounded-md text-slate-200 hover:text-slate-400 bg-black  " onClick={handleSubmit}>Create</button>
+          <UploadFile key={fileName} setFileName={setFileName} />
+
+          {presignedUrl === "undefined" ? (
+            ""
+          ) : (
+            <img className="max-w-72 min-w-40  max-h-52 min-h-40 object-cover" src={presignedUrl} />
+          )}
         </div>
       </div>
     </>

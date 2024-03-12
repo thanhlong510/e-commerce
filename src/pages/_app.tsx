@@ -7,6 +7,7 @@ import { api } from "~/utils/api";
 import "~/styles/globals.css";
 import { NextUIProvider } from "@nextui-org/react";
 import { Jost } from "@next/font/google";
+import { CartContextProvider } from "./components/CartContext";
 
 const jost = Jost({
   subsets: ["latin"],
@@ -19,10 +20,11 @@ const MyApp: AppType<{ session: Session | null }> = ({
   return (
     <SessionProvider session={session}>
       <NextUIProvider>
-        {/* <Navbar /> */}
-        <main className={jost.className}>
-          <Component {...pageProps} />
-        </main>
+        <CartContextProvider>
+          <main className={jost.className}>
+            <Component {...pageProps} />
+          </main>
+        </CartContextProvider>
       </NextUIProvider>
     </SessionProvider>
   );

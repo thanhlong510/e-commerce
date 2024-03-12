@@ -12,7 +12,10 @@ const CreateProductPage = () => {
           subHeader="Add a new product"
         />
       </div>
+      <div className="p-4">
       <CreateProduct/>
+      </div>
+    
     </div>
   );
 };

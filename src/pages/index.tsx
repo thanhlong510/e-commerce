@@ -5,6 +5,7 @@ import PaginationSlider from "./components/PaginationSlider";
 import ItemCategory from "./components/ItemCategory";
 import SaleSection from "./components/SaleSection";
 import Footer from "./components/Footer";
+import BgImageSize from "./components/BgImageSize";
 export default function Home() {
   return (
     <>
@@ -34,6 +35,9 @@ export default function Home() {
         </div>
         <div className="mb-20">
           <SaleSection />
+        </div>
+        <div>
+          <BgImageSize/>
         </div>
         <Footer />
       </div>

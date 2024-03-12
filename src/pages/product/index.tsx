@@ -1,9 +1,7 @@
 import React from "react";
 import StoreNav from "../components/StoreNav";
 import { Image } from "@nextui-org/react";
-
 import { BsCart } from "react-icons/bs";
-
 import Footer from "../components/Footer";
 import DetailProduct from "../components/DetailProduct";
 const Product = () => {

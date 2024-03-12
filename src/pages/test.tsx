@@ -8,25 +8,20 @@ import { FaLeftRight } from "react-icons/fa6";
 import Slider from "./components/Slider";
 import CreateProduct from "./components/CreateProduct";
 import CreateFeature from "./components/CreateFeature";
-import MultiSelectCategory from "./components/MultiSelectCategory";
+import SelectInput from "~/components/SelectInput";
+
+
 
 
 const Test = () => {
-  const [selectedInterests, setSelectedInterests] = useState<string[]>([]);
-  const handleInterestToggle = (interest: string) => {
-    if (selectedInterests.includes(interest)) {
-      // If the interest is already selected, remove it
-      setSelectedInterests(
-        selectedInterests.filter((item) => item !== interest),
-      );
-    } else {
-      // If the interest is not selected, add it
-      setSelectedInterests([...selectedInterests, interest]);
-    }
-  };
+  
+ const [value,setSelectValue] = useState('')
+ console.log(value)
   return (
     <div >
-     <CreateProduct/>
+      <CreateProduct/>
+      <CreateFeature featureType="color" placeholderName="Color" placeholderValue="Color value"/>
+     <SelectInput setSelectValue={setSelectValue}/>
     {/* <MultiSelectCategory handleInterestToggle={handleInterestToggle} selectedInterests={selectedInterests}/> */}
     </div>
   );

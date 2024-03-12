@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { VscCircleFilled } from "react-icons/vsc";
+
+interface SliderProps {
+  slides?: string[] 
+}
 const Slider = () => {
   const slides = [
     {

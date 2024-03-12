@@ -8,10 +8,11 @@ const Contact = () => {
     <div>
       <StoreNav />
       <div className="relative mt-[100px] text-4xl">
-        <img src="./banner.jpg" className="h-auto w-full " />
-        <div className="absolute inset-x-0 top-12 flex items-center justify-center">
+        
+        <div className="absolute w-full h-full top-0 left-0 flex items-center justify-center">
           <p className=" font-semibold">Contact</p>
         </div>
+        <img src="./banner.jpg" className="h-auto w-full " />
       </div>
       <div className="mx-[100px] grid grid-cols-1 md:grid-cols-2 gap-8 mt-10 ">
         <div>
@@ -26,37 +27,35 @@ const Contact = () => {
         <div>
           <p className="text-2xl font-bold mb-8">Send us your email</p>
           <div className="grid grid-cols-2 gap-x-6 gap-y-4  ">
-            <Input
+            <input
               key="outside"
-              labelPlacement="outside"
+
               placeholder="Your Name"
-              className="w-full  border border-solid border-[#f9f9f9] bg-[#f9f9f9] p-2"
+              className="w-full   border-[#f9f9f9] bg-[#f9f9f9] p-2"
             />
 
-            <Input
+            <input
               key="outside"
-              labelPlacement="outside"
               placeholder="Your email"
               className="w-full  border border-solid border-[#f9f9f9] bg-[#f9f9f9] p-2"
             />
 
-            <Input
+            <input
               key="outside"
-              labelPlacement="outside"
+
               placeholder="Subject"
               className="w-full  border border-solid border-[#f9f9f9] bg-[#f9f9f9] p-2"
             />
 
-            <Input
+            <input
               key="outside"
-              labelPlacement="outside"
+
               placeholder="Phone"
               className="w-full  border border-solid border-[#f9f9f9] bg-[#f9f9f9] p-2"
             />
           </div>
-          <Input
+          <textarea
               key="outside"
-              labelPlacement="outside"
               placeholder="Message"
               className="w-full h-[200px] mt-4  border border-solid border-[#f9f9f9] bg-[#f9f9f9] p-2"
             />
