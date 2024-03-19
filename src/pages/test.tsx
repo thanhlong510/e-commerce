@@ -22,6 +22,7 @@ const Test = () => {
       <CreateProduct/>
       <CreateFeature featureType="color" placeholderName="Color" placeholderValue="Color value"/>
      <SelectInput setSelectValue={setSelectValue}/>
+     XIn chao 123425r35
     {/* <MultiSelectCategory handleInterestToggle={handleInterestToggle} selectedInterests={selectedInterests}/> */}
     </div>
   );
